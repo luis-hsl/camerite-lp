@@ -8,67 +8,111 @@
   }
 
   body {
-    @apply bg-camerite-purple-dark text-white font-sans;
+    background-color: #070019;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 }
 
 @layer components {
-  .whatsapp-btn {
-    @apply inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(37,211,102,0.4)];
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase mb-5;
+    color: #A785F1;
   }
 
-  .whatsapp-btn-sm {
-    @apply inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold py-3 px-6 rounded-full text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(37,211,102,0.3)];
-  }
-
-  .whatsapp-float {
-    @apply fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.5)];
+  .section-label::before {
+    content: '';
+    @apply w-8 h-px;
+    background: #7B48EA;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold;
+    @apply text-3xl md:text-4xl lg:text-[3.25rem] font-display font-bold text-white leading-[1.1];
   }
 
-  .section-subtitle {
-    @apply text-lg md:text-xl text-gray-300 max-w-3xl mx-auto;
+  .section-desc {
+    @apply text-base md:text-lg max-w-2xl leading-relaxed;
+    color: #a1a1aa;
   }
 
-  .card-feature {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-camerite-purple/50 hover:-translate-y-1;
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300;
+    background: #7B48EA;
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-camerite-purple-light to-camerite-cyan-light;
+  .btn-primary:hover {
+    background: #643AC0;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 font-medium py-3.5 px-8 rounded-xl transition-all duration-300;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #d4d4d8;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(123, 72, 234, 0.4);
+    color: #ffffff;
+    background: rgba(123, 72, 234, 0.08);
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1eba59] text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300;
+  }
+
+  .btn-whatsapp:hover {
+    transform: translateY(-1px);
+  }
+
+  .glass-card {
+    @apply rounded-2xl border transition-all duration-300;
+    background: rgba(20, 9, 46, 0.5);
+    border-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(123, 72, 234, 0.15);
   }
 }
 
-@layer utilities {
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-  }
-
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1E0A3C;
+  background: #070019;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7C3AED;
-  border-radius: 4px;
+  background: #29184E;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A78BFA;
+  background: #3E2475;
 }
+
+/* Intersection Observer animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
