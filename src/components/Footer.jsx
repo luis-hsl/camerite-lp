@@ -32,22 +32,22 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
           {/* Brand */}
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5 mb-4">
-              <img src="/camerite-icon.svg" alt="Camerite" className="w-8 h-8" />
-              <span className="text-lg font-display font-bold text-white">Camerite</span>
+            <div className="flex items-center gap-2 mb-4">
+              <img src="/camerite-symbol-white.svg" alt="" className="h-7" />
+              <img src="/camerite-wordmark-white.svg" alt="Camerite" className="h-3.5" />
             </div>
             <p className="text-sm text-zinc-500 leading-relaxed mb-4">
-              A inteligencia artificial para suas cameras. Transformando imagens em informacao de valor para mais de 300 mil usuarios no Brasil.
+              A inteligência artificial para suas câmeras. Transformando imagens em informação de valor para mais de 300 mil usuários no Brasil.
             </p>
             <p className="text-xs text-zinc-600 italic">
-              "Seguranca vira cultura, nao so camera na parede."
+              "Segurança vira cultura, não só câmera na parede."
             </p>
           </div>
 
           {/* Links */}
-          <div className="flex gap-16">
+          <div className="flex gap-10 sm:gap-16">
             <div>
-              <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-4">Navegacao</h4>
+              <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-4">Navegação</h4>
               <ul className="space-y-2.5">
                 {footerLinks.map((link) => (
                   <li key={link.href}>

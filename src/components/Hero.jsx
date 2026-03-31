@@ -7,33 +7,32 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-[72px] overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 bg-cam-base" />
-      <div className="absolute top-0 left-0 right-0 h-[500px] bg-cam-surface/40" />
+      <img
+        src="/images/hero-bg.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none"
+      />
 
-      <div ref={sectionRef} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div ref={sectionRef} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left - Copy */}
           <div>
-            <div className="reveal flex items-center gap-3 mb-8">
-              <span className="w-2 h-2 rounded-full bg-cam-green" />
-              <span className="text-sm text-zinc-400 font-medium">
-                +300.000 usuarios ativos no Brasil
-              </span>
-            </div>
-
-            <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-display font-bold text-white leading-[1.08] mb-6">
-              Inteligencia Artificial
+            <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-display font-bold text-white leading-[1.06] mb-5">
+              Inteligência Artificial
               <br />
-              <span className="text-cam-purple">para suas cameras</span>
+              para suas <span className="text-cam-purple">câmeras</span>
             </h1>
 
-            <p className="reveal reveal-delay-2 text-lg text-zinc-400 leading-relaxed max-w-lg mb-4">
-              Suas cameras ja veem. Agora elas podem pensar.
+            <p className="reveal reveal-delay-2 text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-lg mb-3">
+              Transforme qualquer sistema de monitoramento em uma central de dados ativa.
             </p>
-            <p className="reveal reveal-delay-2 text-[15px] text-zinc-500 leading-relaxed max-w-lg mb-10">
-              Conecte suas cameras atuais a nuvem, previna perdas e tome decisoes baseadas em visao computacional. A plataforma mais completa do Brasil.
+            <p className="reveal reveal-delay-2 text-[15px] text-zinc-600 leading-relaxed max-w-lg mb-8">
+              Conecte suas câmeras atuais à nuvem, previna perdas e tome decisões baseadas em visão computacional. Sem trocar equipamento.
             </p>
 
-            <div className="reveal reveal-delay-3 flex flex-col sm:flex-row gap-3">
+            <div className="reveal reveal-delay-3 flex flex-col sm:flex-row gap-3 mb-10">
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
@@ -46,32 +45,86 @@ export default function Hero() {
                 Fale com um Especialista
               </a>
               <a href="#tecnologias" className="btn-secondary">
-                Conheca as Tecnologias
+                Conheça as Tecnologias
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
                 </svg>
               </a>
             </div>
+
+            {/* Stats */}
+            <div className="reveal reveal-delay-4 flex items-center gap-6 text-sm">
+              <div>
+                <div className="font-display font-bold text-white">+300 mil</div>
+                <div className="text-[10px] text-zinc-600 uppercase tracking-wider">usuários</div>
+              </div>
+              <div className="w-px h-8 bg-white/[0.06]" />
+              <div>
+                <div className="font-display font-bold text-white">+400</div>
+                <div className="text-[10px] text-zinc-600 uppercase tracking-wider">parceiros</div>
+              </div>
+              <div className="w-px h-8 bg-white/[0.06]" />
+              <div>
+                <div className="font-display font-bold text-white">+50</div>
+                <div className="text-[10px] text-zinc-600 uppercase tracking-wider">cidades</div>
+              </div>
+            </div>
           </div>
 
-          <div className="reveal reveal-delay-2 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+          {/* Right - Facial Recognition Demo */}
+          <div className="reveal reveal-delay-2 relative overflow-hidden">
+            {/* Main image - person being detected with facial comparison */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-cam-purple/10">
               <img
-                src="https://framerusercontent.com/images/q4n1Pz2KkahH6k5WSlo6Z89EQ.png?width=3030&height=2160"
-                alt="Plataforma Camerite - Dashboard"
+                src="/images/hero-facial-full.png"
+                alt="Reconhecimento facial Camerite — pessoa detectada com comparação de rosto cadastrado, 91% de match"
                 className="w-full h-auto"
                 loading="eager"
               />
-              <div className="absolute inset-x-0 h-px bg-cam-cyan/30 animate-scan-line" />
+              {/* Scan line */}
+              <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cam-cyan/40 to-transparent animate-scan-line pointer-events-none" />
+              {/* Subtle vignette */}
+              <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] pointer-events-none rounded-2xl" />
             </div>
 
-            <div className="absolute -bottom-4 -left-4 md:-left-8 bg-cam-surface border border-white/[0.06] rounded-xl p-3.5 shadow-2xl animate-float max-w-[190px]">
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-2 h-2 rounded-full bg-cam-purple" />
-                <span className="text-[11px] font-semibold text-white">Alerta Detectado</span>
+            {/* Floating label - top */}
+            <div className="absolute -top-3 left-4 sm:left-6 z-20">
+              <div className="flex items-center gap-2 bg-cam-surface/95 backdrop-blur-xl border border-cam-purple/25 rounded-full px-3 py-1.5 shadow-lg">
+                <div className="w-2 h-2 rounded-full bg-cam-green animate-pulse" />
+                <span className="text-[11px] font-mono font-medium text-cam-purple-soft tracking-wide">RECONHECIMENTO FACIAL ATIVO</span>
               </div>
-              <p className="text-[10px] text-zinc-500">Movimento na Area 3 - Entrada principal</p>
             </div>
+
+            {/* Floating analytics card - bottom right */}
+            <div className="hidden sm:block absolute -bottom-4 -right-3 md:-right-6 z-20 animate-float">
+              <div className="bg-cam-surface/95 backdrop-blur-xl border border-white/[0.08] rounded-xl px-4 py-3 shadow-2xl">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-cam-purple/15 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-cam-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-xs font-semibold text-white block">Identidade confirmada</span>
+                    <span className="text-[10px] text-zinc-500">Match 91% · Cadastro verificado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating camera info - bottom left */}
+            <div className="hidden md:flex absolute -bottom-4 -left-3 md:-left-6 z-20 items-center gap-2 bg-cam-surface/95 backdrop-blur-xl border border-white/[0.08] rounded-lg px-3 py-2 shadow-xl animate-float" style={{ animationDelay: '1.5s' }}>
+              <svg className="w-4 h-4 text-cam-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <span className="text-[10px] font-semibold text-white block leading-tight">6 analíticos ativos</span>
+                <span className="text-[9px] text-zinc-500">Detecção · OCR · Facial</span>
+              </div>
+            </div>
+
+            {/* Glow */}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-16 bg-cam-purple/15 blur-[50px] rounded-full pointer-events-none" />
           </div>
         </div>
       </div>

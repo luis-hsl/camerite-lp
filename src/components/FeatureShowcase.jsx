@@ -8,22 +8,23 @@ export default function FeatureShowcase({
   titleHighlight,
   description,
   features,
+  reversed = false,
 }) {
   const sectionRef = useReveal()
   const { containerRef, activeIndex } = useScrollSpy(features.length)
 
   return (
-    <section id={id} className="relative py-20 lg:py-0">
+    <section id={id} className="relative overflow-x-hidden">
       <div ref={sectionRef} className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Header */}
-        <div className="reveal pt-20 lg:pt-28 pb-12 lg:pb-16">
+        <div className="reveal pt-20 sm:pt-24 lg:pt-28 pb-10 lg:pb-16">
           <span className="section-label">{label}</span>
           <h2 className="section-title mb-4">
             {title}
             {titleHighlight && (
               <>
-                <br />
-                <span className="text-cam-purple">{titleHighlight}</span>
+                <br className="hidden sm:block" />
+                <span className="text-cam-purple"> {titleHighlight}</span>
               </>
             )}
           </h2>
@@ -31,88 +32,80 @@ export default function FeatureShowcase({
         </div>
 
         {/* Sticky image + scrolling text */}
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-20 relative">
-          {/* LEFT: Sticky image panel */}
-          <div className="sticky top-[72px] z-10 h-[45vh] lg:h-auto lg:top-24 lg:self-start lg:z-0 mb-6 lg:mb-0">
-            <div className="relative w-full h-full lg:h-[calc(100vh-8rem)] flex items-center justify-center">
-              {/* Images stack */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/[0.04] bg-cam-surface/30">
+        <div className={`lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-20 relative`}>
+          {/* Sticky image panel */}
+          <div className={`sticky top-[72px] lg:top-24 self-start z-10 ${reversed ? 'lg:order-2' : ''}`}>
+            <div className="relative h-[280px] sm:h-[340px] lg:h-[calc(100vh-8rem)]">
+              {/* Images */}
+              <div className="relative w-full h-full rounded-xl lg:rounded-2xl overflow-hidden bg-cam-surface/30">
                 {features.map((feature, i) => (
                   <img
                     key={i}
                     src={feature.image}
                     alt={feature.title}
-                    className="absolute inset-0 w-full h-full object-contain p-2 transition-opacity duration-700 ease-out"
+                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-out"
                     style={{ opacity: activeIndex === i ? 1 : 0 }}
                     loading={i < 2 ? 'eager' : 'lazy'}
                   />
                 ))}
               </div>
 
-              {/* Image counter */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-cam-base/80 backdrop-blur-sm rounded-full px-3 py-1.5">
-                {features.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
-                      activeIndex === i
-                        ? 'bg-cam-purple w-4'
-                        : 'bg-white/20'
-                    }`}
-                  />
-                ))}
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/5">
+                <div
+                  className="h-full bg-cam-purple transition-all duration-500 ease-out"
+                  style={{ width: `${((activeIndex + 1) / features.length) * 100}%` }}
+                />
               </div>
+
+              {/* Bottom fade on mobile - creates smooth transition into text */}
+              <div className="lg:hidden absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-cam-base to-transparent" />
             </div>
           </div>
 
-          {/* RIGHT: Scrolling text sections */}
-          <div ref={containerRef}>
+          {/* Scrolling text sections */}
+          <div ref={containerRef} className={`relative z-20 bg-cam-base lg:bg-transparent ${reversed ? 'lg:order-1' : ''}`}>
             {features.map((feature, i) => (
               <div
                 key={i}
                 data-index={i}
-                className="min-h-[50vh] lg:min-h-[70vh] flex items-center py-8 lg:py-12"
+                className="min-h-[50vh] sm:min-h-[55vh] lg:min-h-[70vh] flex items-center"
               >
                 <div
-                  className={`transition-all duration-500 ease-out p-6 lg:p-8 rounded-2xl ${
+                  className={`py-5 sm:py-6 lg:p-8 lg:rounded-2xl w-full transition-opacity duration-500 ${
                     activeIndex === i
-                      ? 'opacity-100 bg-cam-surface/40 border border-white/[0.04]'
-                      : 'opacity-30'
+                      ? 'opacity-100 lg:bg-cam-surface/40 lg:border lg:border-white/[0.04]'
+                      : 'opacity-20'
                   }`}
                 >
-                  {/* Number */}
-                  <span className="text-cam-purple font-display font-bold text-sm tracking-[0.15em] mb-3 block">
+                  <span className="text-cam-purple font-display font-bold text-xs sm:text-sm tracking-[0.15em] mb-2 block">
                     {String(i + 1).padStart(2, '0')}
                   </span>
 
-                  {/* Title */}
-                  <h3 className="text-2xl lg:text-3xl font-display font-bold text-white mb-1.5 leading-tight">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white mb-1 leading-tight">
                     {feature.title}
                   </h3>
 
-                  {/* Subtitle */}
                   {feature.subtitle && (
-                    <span className="inline-block text-[11px] font-semibold text-cam-purple-soft uppercase tracking-wider mb-3">
+                    <span className="inline-block text-[11px] font-semibold text-cam-purple-soft uppercase tracking-wider mb-2">
                       {feature.subtitle}
                     </span>
                   )}
 
-                  {/* Question / description */}
-                  <p className="text-zinc-400 leading-relaxed mt-3 mb-5 text-[15px]">
+                  <p className="text-sm sm:text-[15px] text-zinc-400 leading-relaxed mt-2 mb-4">
                     {feature.question}
                   </p>
 
-                  {/* Funciona em */}
                   {feature.segments && feature.segments.length > 0 && (
                     <div>
-                      <span className="text-[11px] text-zinc-600 uppercase tracking-wider font-medium block mb-2">
+                      <span className="text-[10px] text-zinc-600 uppercase tracking-wider font-medium block mb-1.5">
                         Funciona em:
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {feature.segments.map((seg, j) => (
                           <span
                             key={j}
-                            className="text-[11px] font-medium text-zinc-500 bg-white/[0.03] border border-white/[0.06] rounded-md px-2.5 py-1"
+                            className="text-[10px] sm:text-[11px] font-medium text-zinc-500 bg-white/[0.03] border border-white/[0.06] rounded-md px-2 py-0.5 sm:py-1"
                           >
                             {seg}
                           </span>

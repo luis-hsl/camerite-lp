@@ -10,10 +10,15 @@
   body {
     background-color: #070019;
     color: #ffffff;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(123, 72, 234, 0.35);
+    color: #fff;
   }
 }
 
@@ -41,31 +46,36 @@
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2.5 text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300;
     background: #7B48EA;
+    box-shadow: 0 0 0 0 rgba(123, 72, 234, 0);
   }
 
   .btn-primary:hover {
     background: #643AC0;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -8px rgba(123, 72, 234, 0.4);
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 font-medium py-3.5 px-8 rounded-xl transition-all duration-300;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: #d4d4d8;
   }
 
   .btn-secondary:hover {
-    border-color: rgba(123, 72, 234, 0.4);
+    border-color: rgba(123, 72, 234, 0.3);
     color: #ffffff;
-    background: rgba(123, 72, 234, 0.08);
+    background: rgba(123, 72, 234, 0.06);
+    transform: translateY(-2px);
   }
 
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1eba59] text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 
   .btn-whatsapp:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -8px rgba(37, 211, 102, 0.35);
   }
 
   .glass-card {
@@ -78,6 +88,16 @@
   .glass-card:hover {
     border-color: rgba(123, 72, 234, 0.15);
   }
+}
+
+/* Hero grid background */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(123, 72, 234, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 72, 234, 0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 70%);
 }
 
 /* Scrollbar */
@@ -102,7 +122,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -116,3 +136,8 @@
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
+
+/* Section dividers with subtle glow */
+section {
+  position: relative;
+}

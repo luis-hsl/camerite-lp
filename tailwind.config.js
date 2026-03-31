@@ -27,14 +27,16 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Specify Expanded Bold', 'Specify Expanded Medium', 'Plus Jakarta Sans', 'sans-serif'],
+        mono: ['Fragment Mono', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'scan-line': 'scanLine 4s linear infinite',
+        'marquee': 'marquee 45s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -52,6 +54,10 @@ export default {
         scanLine: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },
