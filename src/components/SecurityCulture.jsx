@@ -69,7 +69,7 @@ export default function SecurityCulture() {
             </p>
 
             <p className="reveal reveal-delay-2 text-sm text-zinc-500 leading-relaxed mb-10 max-w-lg">
-              Quando o ambiente é observado com frequência, as pessoas se ajustam. Não por medo — mas porque entendem que ali alguém está cuidando. Analíticos criam contexto. O hábito de checar completa o ciclo.
+              Quando o ambiente é monitorado de verdade, o comportamento muda. Não por medo. Mas porque todo mundo sabe que ali tem alguém de olho. E quem cuida, percebe antes.
             </p>
 
             {/* Insight cards */}
@@ -116,7 +116,7 @@ export default function SecurityCulture() {
 
             <div className="rounded-2xl border border-cam-purple/10 bg-cam-purple/[0.03] p-5 sm:p-6">
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Cada ambiente passa a ter uma <span className="text-white font-medium">leitura própria</span>, com base em fatos, não em sensação. Quando o olhar vira rotina, o comportamento muda — e quando o comportamento muda, <span className="text-cam-purple font-medium">o problema perde espaço</span>.
+                Cada lugar passa a ter a <span className="text-white font-medium">sua própria leitura</span>. Baseada no que acontece de fato, não no achismo. Quando checar vira hábito, o comportamento muda. E quando muda, <span className="text-cam-purple font-medium">o problema some</span>.
               </p>
             </div>
           </div>

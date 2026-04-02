@@ -27,7 +27,10 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-cam-purple/10">
+    <footer className="relative">
+      {/* Top border gradient */}
+      <div className="h-px bg-gradient-to-r from-transparent via-cam-purple/40 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
           {/* Brand */}
@@ -36,22 +39,22 @@ export default function Footer() {
               <img src="/camerite-symbol-white.svg" alt="" className="h-7" />
               <img src="/camerite-wordmark-white.svg" alt="Camerite" className="h-3.5" />
             </div>
-            <p className="text-sm text-zinc-500 leading-relaxed mb-4">
-              A inteligência artificial para suas câmeras. Transformando imagens em informação de valor para mais de 300 mil usuários no Brasil.
+            <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+              A <span className="text-cam-purple-soft">inteligência artificial</span> para suas câmeras. Transformando imagens em informação de valor para mais de 300 mil usuários no Brasil.
             </p>
-            <p className="text-xs text-zinc-600 italic">
+            <p className="text-xs text-zinc-500 italic">
               "Segurança vira cultura, não só câmera na parede."
             </p>
           </div>
 
           {/* Links */}
-          <div className="flex gap-10 sm:gap-16">
+          <div className="flex gap-8 sm:gap-10 md:gap-16">
             <div>
-              <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-4">Navegação</h4>
+              <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4">Navegação</h4>
               <ul className="space-y-2.5">
                 {footerLinks.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-sm text-zinc-500 hover:text-white transition-colors duration-300">
+                    <a href={link.href} className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
                       {link.label}
                     </a>
                   </li>
@@ -60,15 +63,15 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-4">Contato</h4>
+              <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4">Contato</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-500 hover:text-white transition-colors duration-300">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
                     WhatsApp
                   </a>
                 </li>
                 <li>
-                  <a href="https://camerite.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-500 hover:text-white transition-colors duration-300">
+                  <a href="https://camerite.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
                     camerite.com
                   </a>
                 </li>
@@ -78,8 +81,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-white/5">
-          <p className="text-xs text-zinc-600">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-cam-purple/10 rounded-b-lg -mx-5 sm:-mx-8 px-5 sm:px-8 pb-2 bg-white/[0.015]">
+          <p className="text-xs text-zinc-500">
             &copy; {new Date().getFullYear()} Camerite. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
@@ -89,7 +92,7 @@ export default function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-zinc-500 hover:text-white hover:border-cam-purple/20 hover:bg-cam-purple/5 transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-cam-purple/10 border border-cam-purple/15 flex items-center justify-center text-cam-purple-soft hover:text-white hover:border-cam-purple/30 hover:bg-cam-purple/20 transition-all duration-300"
                 aria-label={s.label}
               >
                 <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">{s.icon}</svg>

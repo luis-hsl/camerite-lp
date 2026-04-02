@@ -14,7 +14,7 @@ import WhatsAppFloat from './components/WhatsAppFloat'
 const analyticsFeatures = [
   {
     title: 'Contagem de Pessoas',
-    question: 'Quantas pessoas passam por aqui? Em que direção? Em que horário? A contagem acontece sozinha.',
+    question: 'Quantas pessoas passaram por aqui hoje? Em qual direção? Em que horário? Você não precisa contar. A câmera faz isso sozinha.',
     segments: ['Condomínios', 'Escolas', 'Eventos', 'Espaços Públicos'],
     image: '/images/contagem-pessoas.png',
   },
@@ -39,7 +39,7 @@ const analyticsFeatures = [
   },
   {
     title: 'Reconhecimento Facial',
-    question: 'Identifique rostos, busque por foto e receba alertas automáticos. Controle e inteligência juntos.',
+    question: 'Cadastre um rosto e receba alerta quando ele aparecer. Busque por foto e ache em segundos. Simples assim.',
     segments: ['Empresas', 'Eventos', 'Locais Públicos'],
     image: '/images/reconhecimento-facial.png',
   },
@@ -54,19 +54,19 @@ const segmentFeatures = [
   },
   {
     title: 'Comércios e Shoppings',
-    question: 'Prevenção de furtos, controle de fluxo de clientes e identificação de visitantes com tecnologia inteligente. Fila crescendo? Situação suspeita? A câmera vê e te avisa.',
+    question: 'Fila crescendo e ninguém viu? Situação estranha no corredor? A câmera percebe antes de você. Menos perda, mais controle do que acontece na loja.',
     segments: ['Lojas', 'Supermercados', 'Shoppings', 'Franquias'],
     image: '/images/comercios-shoppings.png',
   },
   {
     title: 'Logística e Transporte',
-    question: 'Registro automático de placas e movimentação de veículos. Otimize processos, evite fraudes e tenha controle total da operação.',
+    question: 'Qual caminhão entrou? Que horas saiu? A placa bateu com o agendamento? Tudo registrado automaticamente, sem depender da portaria anotar.',
     segments: ['Transportadoras', 'Centros de distribuição', 'Pátios', 'Portarias'],
     image: '/images/logistica-transporte.png',
   },
   {
     title: 'Eventos e Locais Públicos',
-    question: 'Milhares de pessoas, uma única plataforma. Detecção em tempo real com reconhecimento facial, garantindo prevenção e agilidade na tomada de decisão.',
+    question: 'Show com 10 mil pessoas e um procurado na multidão. O reconhecimento facial acha. Aglomeração formando na entrada? Você fica sabendo na hora.',
     segments: ['Shows', 'Praças', 'Estádios', 'Terminais'],
     image: '/images/eventos-publicos.png',
   },
@@ -83,8 +83,9 @@ export default function App() {
         label="Tecnologias"
         title="Cada analítico responde"
         titleHighlight="a uma pergunta diferente"
-        description="Usar o mesmo analítico para problemas diferentes gera ruído, não clareza. Aqui, cada tecnologia tem um propósito."
+        description="Cada analítico resolve um problema específico. Misturar tudo é o caminho mais rápido pra não resolver nada."
         features={analyticsFeatures}
+        mobileImageOnly
       />
       <FeatureShowcase
         id="segmentos"
@@ -94,6 +95,7 @@ export default function App() {
         description="Cada ambiente tem seus desafios. A Camerite se adapta ao seu cenário, não o contrário."
         features={segmentFeatures}
         reversed
+        mobileImageOnly
       />
       <Platform />
       <AppDemo />

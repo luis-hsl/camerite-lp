@@ -37,6 +37,7 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'scan-line': 'scanLine 4s linear infinite',
         'marquee': 'marquee 45s linear infinite',
+        'marquee-slow': 'marquee 30s linear infinite',
       },
       keyframes: {
         fadeIn: {

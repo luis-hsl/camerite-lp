@@ -6,31 +6,42 @@ export default function CTA() {
   const sectionRef = useReveal()
 
   return (
-    <section className="relative py-28">
+    <section className="relative py-28 overflow-hidden">
+      {/* Background glow behind section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[600px] aspect-[3/2] bg-cam-purple/[0.05] blur-[120px] rounded-full" />
+      </div>
+
       <div ref={sectionRef} className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="reveal relative rounded-3xl overflow-hidden border border-white/[0.06]">
+        <div className="reveal relative rounded-3xl overflow-hidden border border-cam-purple/[0.12]"
+          style={{
+            background: 'linear-gradient(180deg, rgba(123, 72, 234, 0.04) 0%, rgba(10, 3, 22, 0.6) 40%, rgba(14, 5, 30, 0.4) 100%)',
+            boxShadow: '0 0 100px -30px rgba(123, 72, 234, 0.08), inset 0 1px 0 0 rgba(123, 72, 234, 0.12)',
+          }}
+        >
           <div className="absolute inset-0">
             <img
               src="/images/camerite-acao.png"
               alt=""
               className="w-full h-full object-cover opacity-10"
             />
-            <div className="absolute inset-0 bg-cam-darker/90" />
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-cam-purple/[0.06] blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-cam-darker/85" />
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-cam-purple/[0.08] blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] bg-cam-purple/[0.05] blur-[80px] rounded-full pointer-events-none" />
           </div>
 
           <div className="relative z-10 p-6 sm:p-10 md:p-16 lg:p-20">
             <div className="max-w-2xl">
               <p className="text-sm text-cam-purple-soft font-medium mb-4 tracking-wide">
-                Cada cenário tem suas perguntas.
+                Sua operação é diferente. A solução também.
               </p>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-[1.1] mb-6">
-                Quando a pergunta é clara, a <span className="text-cam-purple">decisão vem mais rápido.</span>
+                Conta pra gente o que você precisa resolver. <span className="text-cam-purple">A gente mostra como.</span>
               </h2>
 
-              <p className="text-base text-zinc-400 leading-relaxed mb-10 max-w-lg">
-                Fale com alguém que entende do seu segmento. Nosso time ajuda você a escolher os analíticos certos pro seu cenário — sem enrolação, sem pacote genérico.
+              <p className="text-base text-zinc-300 leading-relaxed mb-10 max-w-lg">
+                Sem script decorado, sem vendedor empurrando pacote. Você fala o problema, nosso time monta a solução junto com você.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -47,24 +58,6 @@ export default function CTA() {
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-zinc-500">
-                <span className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-cam-green" />
-                  +300 mil usuários
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-cam-green" />
-                  +400 parceiros
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-cam-green" />
-                  +50 cidades
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-cam-green" />
-                  Suporte dedicado
-                </span>
-              </div>
             </div>
           </div>
         </div>
