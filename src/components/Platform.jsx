@@ -58,12 +58,13 @@ function MobilePlatform() {
               onClick={() => setExpanded(isOpen ? null : i)}
               className={`
                 w-full text-left rounded-xl px-4 py-3 transition-all duration-300
-                border
+                border border-cam-purple/30
                 ${isOpen
-                  ? 'bg-cam-purple/[0.06] border-cam-purple/20'
-                  : 'bg-white/[0.02] border-white/[0.04] active:bg-white/[0.04]'
+                  ? 'bg-cam-purple/[0.06]'
+                  : 'bg-white/[0.02] active:bg-white/[0.04]'
                 }
               `}
+              style={{ boxShadow: '0 0 10px rgba(123,72,234,0.25), 0 0 30px rgba(123,72,234,0.1)' }}
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
