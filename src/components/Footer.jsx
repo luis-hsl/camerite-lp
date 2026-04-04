@@ -66,7 +66,7 @@ export default function Footer() {
               <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4">Contato</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})} className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
                     WhatsApp
                   </a>
                 </li>

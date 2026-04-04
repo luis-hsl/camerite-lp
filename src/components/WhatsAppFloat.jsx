@@ -16,6 +16,7 @@ export default function WhatsAppFloat() {
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})}
       className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-[#25D366] hover:bg-[#1eba59] text-white p-3.5 sm:p-4 rounded-2xl shadow-lg shadow-[#25D366]/20 transition-all duration-500 hover:scale-105 ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
       }`}

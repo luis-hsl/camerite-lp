@@ -310,6 +310,7 @@ export default function CityGov() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary group"
+              onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})}
             >
               Leve inteligência para sua operação
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
