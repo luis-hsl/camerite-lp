@@ -1,4 +1,6 @@
-const WHATSAPP_LINK = 'https://wa.me/5543936180655?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Camerite.'
+import WhatsAppLink from './WhatsAppLink'
+
+const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre a Camerite.'
 
 const footerLinks = [
   { label: 'Tecnologias', href: '#tecnologias' },
@@ -66,9 +68,9 @@ export default function Footer() {
               <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4">Contato</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})} className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
+                  <WhatsAppLink message={WHATSAPP_MESSAGE} className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">
                     WhatsApp
-                  </a>
+                  </WhatsAppLink>
                 </li>
                 <li>
                   <a href="https://camerite.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-cam-purple-soft transition-colors duration-300">

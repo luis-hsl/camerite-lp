@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
+import WhatsAppLink from './WhatsAppLink'
 
-const WHATSAPP_LINK = 'https://wa.me/5543936180655?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Camerite%20para%20gest%C3%A3o%20p%C3%BAblica.'
+const WHATSAPP_MESSAGE = 'Olá! Quero saber mais sobre a Camerite para gestão pública.'
 
 /* ── Scroll visibility hook ── */
 function useVisible(threshold = 0.3) {
@@ -305,18 +306,15 @@ export default function CityGov() {
             <p className="text-lg sm:text-xl text-zinc-300 mb-8 max-w-xl mx-auto leading-relaxed">
               Cidade que entende o que acontece <span className="text-white font-semibold">age antes</span>, gasta melhor, protege mais.
             </p>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message={WHATSAPP_MESSAGE}
               className="btn-primary group"
-              onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})}
             >
               Leve inteligência para sua operação
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 

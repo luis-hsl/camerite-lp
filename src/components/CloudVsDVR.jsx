@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
+import WhatsAppLink from './WhatsAppLink'
 
-const WHATSAPP_LINK = 'https://wa.me/5543936180655?text=Ol%C3%A1!%20Quero%20migrar%20para%20a%20nuvem%20Camerite.'
+const WHATSAPP_MESSAGE = 'Olá! Quero migrar para a nuvem Camerite.'
 
 /* ── Scroll visibility hook ── */
 function useVisible(threshold = 0.3) {
@@ -242,12 +243,12 @@ export default function CloudVsDVR() {
 
         {/* CTA */}
         <div className="reveal reveal-delay-4">
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary group" onClick={() => gtag('event', 'conversion', {'send_to': 'AW-16844163935/inNeCLuMt5UcEN-W9t8-'})}>
+          <WhatsAppLink message={WHATSAPP_MESSAGE} className="btn-primary group">
             Quero migrar para a nuvem
             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </section>
